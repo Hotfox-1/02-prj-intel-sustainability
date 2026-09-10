@@ -1,1 +1,163 @@
-/* Add your CSS here */
+/* Give the page a calm background and an easy-to-read font. */
+body {
+	margin: 0;
+	background: #f4f7fb;
+	color: #17233c;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+}
+
+/* Keep the Intel logo in a clear bar at the top of the page. */
+.navbar {
+	padding: 18px 8%;
+	background: #000000;
+	border-bottom: 1px solid #000000;
+}
+
+.navbar img {
+	display: block;
+	width: 92px;
+	height: auto;
+}
+
+/* Center the introduction below the navigation bar. */
+.hero {
+	max-width: 760px;
+	margin: 0 auto;
+	padding: 72px 24px 56px;
+	text-align: center;
+}
+
+.hero h1 {
+	margin: 0 0 16px;
+	color: #0068b5;
+	font-size: 42px;
+	line-height: 1.15;
+}
+
+.hero p {
+	margin: 0;
+	color: #52627a;
+	font-size: 18px;
+}
+
+/* Place the timeline groups side by side and allow horizontal scrolling. */
+.timeline {
+	display: flex;
+	overflow-x: auto;
+	width: 100%;
+	padding: 0 0 40px;
+}
+
+/* Each group places one background image around its cards. */
+.timeline-group {
+	display: flex;
+	flex-direction: row;
+	gap: 24px;
+	box-sizing: border-box;
+	flex: 0 0 100vw;
+	width: 100vw;
+	overflow-x: visible;
+	padding: 24px;
+	background-position: center;
+	background-size: cover;
+}
+
+.group-one {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("img/1.jpg");
+}
+
+.group-two {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("img/2.jpg");
+}
+
+.group-three {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("img/3.jpg");
+}
+
+.group-four {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("img/4.jpg");
+}
+
+/* Each timeline item still looks like a card, but its background is plain. */
+.card {
+	box-sizing: border-box;
+	flex: 0 0 320px;
+	width: 320px;
+	max-width: 1100px;
+	margin-right: auto;
+	margin-left: auto;
+	min-height: 190px;
+	padding: 28px;
+	background: rgba(255, 255, 255, 0.92);
+	border: 1px solid #d9e2ef;
+	border-radius: 12px;
+	box-shadow: 0 6px 18px rgba(23, 35, 60, 0.08);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 24px rgba(23, 35, 60, 0.14);
+}
+
+.card h2 {
+	margin: 0 0 8px;
+	color: #0068b5;
+	font-size: 30px;
+}
+
+.card h3 {
+	margin: 0 0 12px;
+	color: #17233c;
+	font-size: 20px;
+}
+
+.card p {
+	margin: 0;
+	color: #52627a;
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity 0.2s ease, max-height 0.2s ease;
+}
+
+/* Show the description when someone hovers over a card. */
+.card:hover p {
+	opacity: 1;
+	max-height: 160px;
+}
+
+body > p {
+	margin: 0;
+	padding: 0 24px 40px;
+	color: #52627a;
+	text-align: center;
+}
+
+/* Reduce the heading size on narrow screens. */
+@media (max-width: 600px) {
+	.timeline {
+		display: block;
+		overflow-x: visible;
+	}
+
+	.timeline-group {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		overflow-x: visible;
+	}
+
+	.card {
+		width: 100%;
+		flex-basis: auto;
+	}
+
+	.hero {
+		padding-top: 48px;
+	}
+
+	.hero h1 {
+		font-size: 34px;
+	}
+}
